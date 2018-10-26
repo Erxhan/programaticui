@@ -24,6 +24,7 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
         contactsTableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
         contactsTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         contactsTableView.dataSource = self
+        contactsTableView.delegate = self
         
         contactsTableView.register(ContactTableViewCell.self, forCellReuseIdentifier: "contactCell")
     }
@@ -34,13 +35,12 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! ContactTableViewCell
-        cell.textLabel?.text = contacts[indexPath.row].name
         cell.contact = contacts[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 100
     }
     
     func setupNavigation() {

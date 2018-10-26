@@ -46,7 +46,7 @@ class ContactTableViewCell: UITableViewCell {
     let jobTitleDetailedLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.textColor = _ColorLiteralType(red: 1, green: 1, blue: 1, alpha: 1)
+        label.textColor = _ColorLiteralType(red: 0.3, green: 0.3, blue: 0.3, alpha: 1)
         label.layer.cornerRadius = 5
         label.clipsToBounds = true
         label.translatesAutoresizingMaskIntoConstraints = false
